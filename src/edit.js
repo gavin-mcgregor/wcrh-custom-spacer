@@ -43,9 +43,10 @@ export default function Edit({ attributes, setAttributes }) {
 	// Height options
 	const heightOptions = [
 		{ label: __("Please Select"), value: "", disabled: true },
-		{ label: __("Half"), value: "spacer-half" },
-		{ label: __("Normal"), value: "spacer-normal" },
-		{ label: __("Double"), value: "spacer-double" },
+		{ label: __("Half"), value: "spacer-xhalf" },
+		{ label: __("Normal"), value: "spacer-x1" },
+		{ label: __("Double"), value: "spacer-x2" },
+		{ label: __("4x"), value: "spacer-x4" },
 	];
 
 	// Get label for span

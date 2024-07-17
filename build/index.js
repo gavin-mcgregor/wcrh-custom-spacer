@@ -71,13 +71,16 @@ function Edit({
     disabled: true
   }, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Half"),
-    value: "spacer-half"
+    value: "spacer-xhalf"
   }, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Normal"),
-    value: "spacer-normal"
+    value: "spacer-x1"
   }, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Double"),
-    value: "spacer-double"
+    value: "spacer-x2"
+  }, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("4x"),
+    value: "spacer-x4"
   }];
 
   // Get label for span
