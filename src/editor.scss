@@ -4,6 +4,13 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-custom-spacer-wcrh-custom-spacer {
-	border: 1px dotted #f00;
+.wp-block-wcrh-custom-spacer {
+	text-align: center;
+	color: rgba(0, 0, 0, 0);
+}
+
+.wp-block-wcrh-custom-spacer:hover,
+.wp-block-wcrh-custom-spacer:focus {
+	background-color: #eee;
+	color: #666;
 }

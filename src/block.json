@@ -1,20 +1,22 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "custom-spacer/wcrh-custom-spacer",
+	"name": "wcrh/custom-spacer",
 	"version": "0.1.0",
-	"title": "WCRH Custom Spacer",
-	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"title": "Spacer",
+	"category": "custom-block",
 	"example": {},
+	"attributes": {
+		"height": {
+			"type": "string"
+		}
+	},
 	"supports": {
 		"html": false
 	},
-	"textdomain": "wcrh-custom-spacer",
+	"textdomain": "custom-spacer",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"render": "file:./render.php",
-	"viewScript": "file:./view.js"
+	"render": "file:./render.php"
 }

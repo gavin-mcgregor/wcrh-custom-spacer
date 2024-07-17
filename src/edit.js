@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
-import { __ } from '@wordpress/i18n';
+import { __ } from "@wordpress/i18n";
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -11,7 +11,13 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps } from "@wordpress/block-editor";
+import {
+	PanelBody,
+	SelectControl,
+	Flex,
+	FlexItem,
+} from "@wordpress/components";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -19,7 +25,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-import './editor.scss';
+import "./editor.scss";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -29,13 +35,42 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
+
+export default function Edit({ attributes, setAttributes }) {
+	// Atrributes
+	const { height } = attributes;
+
+	// Height options
+	const heightOptions = [
+		{ label: __("Please Select"), value: "", disabled: true },
+		{ label: __("Half"), value: "spacer-half" },
+		{ label: __("Normal"), value: "spacer-normal" },
+		{ label: __("Double"), value: "spacer-double" },
+	];
+
+	// Get label for span
+	const selectedHeightLabel =
+		heightOptions.find((option) => option.value === height)?.label || "";
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'WCRH Custom Spacer – hello from the editor!',
-				'wcrh-custom-spacer'
-			) }
-		</p>
+		<>
+			<InspectorControls>
+				<PanelBody title={__("Settings")}>
+					<Flex direction="column">
+						<FlexItem>
+							<SelectControl
+								label={__("Spacer Height")}
+								value={height || ""}
+								options={heightOptions}
+								onChange={(value) => setAttributes({ height: value })}
+							/>
+						</FlexItem>
+					</Flex>
+				</PanelBody>
+			</InspectorControls>
+			<div {...useBlockProps({ className: `${height}` })}>
+				<span>{`${selectedHeightLabel} Spacer`}</span>
+			</div>
+		</>
 	);
 }
