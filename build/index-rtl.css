@@ -9,6 +9,7 @@
 .wp-block-wcrh-custom-spacer {
   text-align: center;
   color: rgba(0, 0, 0, 0);
+  width: 100%;
 }
 
 .wp-block-wcrh-custom-spacer:hover,
